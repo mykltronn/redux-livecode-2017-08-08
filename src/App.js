@@ -7,6 +7,7 @@ import {createStore} from 'redux'
 import reducer from './reducer'
 
 import ItemList from "./containers/ItemList";
+import Cart from "./containers/Cart";
 
 const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
@@ -16,6 +17,7 @@ class App extends Component {
             <Provider store={store}>
                 <div className="App">
                     <ItemList/>
+                    <Cart />
                 </div>
             </Provider>
         );

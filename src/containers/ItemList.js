@@ -16,14 +16,14 @@ class ItemList extends Component {
         const items = this.props.items;
         return (
             <div className="ItemList">
+                <h2>Items</h2>
                 {items.map(item => (
-                    <div className="Item">
-                        <div>{item.title}: ${item.price}</div>
-                        <div>
+                    <div key={item.id} className="Item">
+                        {item.title}: ${item.price}
                             <button className="button" onClick={this.handleBuyButton(item.id)}>Buy</button>
-                        </div>
+
                     </div>
-                ))}
+                ))}                
             </div>
         );
     }

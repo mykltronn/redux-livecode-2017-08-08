@@ -21,3 +21,12 @@ test("reducer should be able to clear cart", function () {
   const state2 = reducer(state1, clearCart());
   expect(state2.cart).toEqual({});
 })
+
+test("if an item is already in cart, do not change it on add", function () {
+  const state = {
+    cart: {1: 3}
+  }
+
+  const newState = reducer(state, addItem(1));
+  expect(newState.cart[1]).toEqual(3);
+})

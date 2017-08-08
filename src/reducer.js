@@ -20,9 +20,12 @@ export const initialState = {
     cart: {}
 };
 
-const reducer = function(state=initialState, action) {
+const reducer = function(state = initialState, action) {
     switch (action.type) {
         case ADD_ITEM:
+            if (state.cart[action.payload]) {
+                return state;
+            }
             return update(state, {
                 cart: {
                     [action.payload]: {
